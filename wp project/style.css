@@ -1,0 +1,43 @@
+.a1
+{
+	background-color:grey;
+}
+.a2
+{
+ color:blue;
+ }
+.pro
+{
+background-image:url("back.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+}
+.abt
+{
+    margin:40px;
+	text-align:center;
+	font-family:'lucida calligraphy';
+	font-size:20px;
+}
+.faq
+{
+	font-family:'lucida calligraphy';
+	font-size:20px;
+}
+.inp
+{
+width:25%;
+float:left;
+margin:0px;
+border:2px solid black;
+}
+.login
+{
+	position:absolute;
+	left:350px;
+	width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 30px;
+	background-color:lavender;
+}

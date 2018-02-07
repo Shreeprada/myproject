@@ -1,0 +1,724 @@
+package excep;
+
+
+
+import java.awt.*;
+import java.util.Timer;
+import java.applet.*;
+/*
+ * <applet code=userinput width=3000 height=250>
+ * </applet>
+ */
+
+	
+
+
+public class userinput extends Applet implements Runnable
+{
+      
+     
+	int x2=1200,nw=380;
+      Thread t=null;
+      Thread t1=null;
+      boolean stopflag;
+      int count=0;
+      
+      public void init()
+      {}
+
+      public void start()
+      {
+    	  setBackground(Color.black);
+    	 t=new Thread(this);
+    	  t.start();
+    	//  t1.start();
+    	  
+      }
+      
+      
+      public void run()
+      { 
+    	  for(;;)
+    	  {
+    		  try
+    		  {
+    			  if(x2==400)
+    				  break;
+    			   repaint();
+    			//   paints(Graphics);
+    			  t.sleep(100); 
+    			  
+    		  }
+    		  catch(Exception e){}
+    	  }
+      }
+
+      public void paint(Graphics g)
+      { 
+    	  
+    	  x2=x2-20;
+   
+         if(x2<0)
+          x2=1200;
+         
+    
+       //code for rectangle
+         
+          g.setColor(Color.blue);
+     
+          for (int k=4;k<9;++k)
+          {   
+        	//  g.drawRect(370, k*50, 200, 50);
+        	  g.drawRect(800, k*75, 200, 60);
+        	  
+          } 
+      //end   
+          
+          
+          
+		
+          g.setColor(Color.blue);
+		
+          Font myFont = new Font ("Courier New", 1, 25);
+          g.setFont (myFont);
+         
+       //code for processess being entered
+          g.drawString("processes are entering the ready queue",1030,100);
+                     
+                       for(int i=320;i<695;i=i+75)
+                      {  
+                    	  g.setColor(Color.white);
+                           g.fillOval(x2+480,i,30,20);
+                       System.out.println(x2+"and"+i);
+                      }
+                       
+             
+       
+                       for(int i=320;i<695;i=i+75)
+                       {  
+                     	  g.setColor(Color.white);
+                            g.fillOval(x2+540,i,30,20);
+                        System.out.println(x2+"and"+i);
+                       } 
+                     
+      //end                 
+                        
+                      
+                      
+                   
+                      
+                      if(x2==400)
+                      {
+                    	
+                    	  g.setColor(Color.white);
+                    	 // g.drawString("cpu", 150, 200);
+                    	  g.setColor(Color.blue);
+                    	  g.fillRect(500, 500, 100, 200);
+                    	  
+                    	  g.setColor(Color.black);
+                          g.fillOval(880,320,30,20);
+                          
+                          try {
+  							Thread.sleep(300);
+  						} catch (InterruptedException e) {
+  							// TODO Auto-generated catch block
+  							e.printStackTrace();
+  						}
+                          
+                         g.setColor(Color.white);
+                         g.fillOval(840,340,30,20);
+                         
+                         try {
+   							Thread.sleep(300);
+   						} catch (InterruptedException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						}
+                         
+                         g.setColor(Color.black);
+                         g.fillOval(840,340,30,20);
+                         
+                         try {
+   							Thread.sleep(300);
+   						} catch (InterruptedException e) {
+   							// TODO Auto-generated catch block
+   							e.printStackTrace();
+   						}
+                         
+                         
+                    	  int x=810;
+                    	  for(int i=350;i<560;i=i+40)
+                    	  { // int x=780,y=350;
+                    		  g.setColor(Color.blue);
+                              g.drawString("process1 in the top most queue getting exceuted by the cpu",1030,130);
+                    	      x=x-40;
+                    	      g.setColor(Color.white);
+                    		  g.fillOval(x,i,30,20);
+                    		  try {
+        							Thread.sleep(300);
+        						} catch (InterruptedException e) {
+        							// TODO Auto-generated catch block
+        							e.printStackTrace();
+        						}
+                    		  if(i==550)  
+                    		  break;
+                    		  else
+                    		  {
+                    		  g.setColor(Color.black);
+                    		  g.fillOval(x,i,30,20);
+                    		  }
+                    	  }
+                    	  
+                    	  try {
+  							Thread.sleep(300);
+  						} catch (InterruptedException e) {
+  							// TODO Auto-generated catch block
+  							e.printStackTrace();
+  						}
+                    	
+                    	  g.setColor(Color.blue);
+                		  g.fillOval(570,550,30,20);
+                		  
+                		  try {
+    							Thread.sleep(300);
+    						} catch (InterruptedException e) {
+    							// TODO Auto-generated catch block
+    							e.printStackTrace();
+    						}
+                		  
+                		  g.setColor(Color.black);
+                		  g.fillOval(940,320,30,20);
+                		  
+                		  try {
+    							Thread.sleep(300);
+    						} catch (InterruptedException e) {
+    							// TODO Auto-generated catch block
+    							e.printStackTrace();
+    						}
+                		  
+                		  g.setColor(Color.white);
+                		  g.fillOval(900,320,30,20); 
+                		  g.setColor(Color.black);
+                		  g.fillOval(900,320,30,20);
+                		  
+                		  try {
+  							Thread.sleep(300);
+  						} catch (InterruptedException e) {
+  							// TODO Auto-generated catch block
+  							e.printStackTrace();
+  						}
+                		  g.setColor(Color.white);
+                		  g.fillOval(850,320,30,20);
+                		  
+                		  g.setColor(Color.black);
+                		  g.fillOval(850,320,30,20);
+                		  
+                		  g.setColor(Color.white);
+                		  g.fillOval(820,320,30,20);
+                		  try {
+    							Thread.sleep(300);
+    						} catch (InterruptedException e) {
+    							// TODO Auto-generated catch block
+    							e.printStackTrace();
+    						}
+                		  g.setColor(Color.black);
+                		  g.fillOval(820,320,30,20);
+                		  
+                		  int xx=810;
+                		  for(int i=350;i<560;i=i+40)
+                    	  { // int x=780,y=350;
+                    		  g.setColor(Color.blue);
+                              g.drawString("process2 in the top most queue getting exceuted by the cpu",1030,160);
+                    	     xx=xx-40;
+                    	      g.setColor(Color.white);
+                    		  g.fillOval(xx,i,30,20);
+                    		  try {
+        							Thread.sleep(300);
+        						} catch (InterruptedException e) {
+        							// TODO Auto-generated catch block
+        							e.printStackTrace();
+        						}
+                    		  if(i==550)  
+                    		  break;
+                    		  else
+                    		  {
+                    		  g.setColor(Color.black);
+                    		  g.fillOval(xx,i,30,20);
+                    		  }
+                    	  }
+                    	  
+                    	  try {
+  							Thread.sleep(300);
+  						} catch (InterruptedException e) {
+  							// TODO Auto-generated catch block
+  							e.printStackTrace();
+  						}
+                    	  
+                    	  g.setColor(Color.blue);
+                		  g.fillOval(570,550,30,20);
+                    	
+                    	
+                
+                		  
+                		  try {
+    							Thread.sleep(300);
+    						} catch (InterruptedException e) {
+    							// TODO Auto-generated catch block
+    							e.printStackTrace();
+    						}
+                		  
+                                    
+                          g.drawString("process1 in the 2nd queue is getting exceuted by the cpu",1030,190);
+                          g.setColor(Color.black);
+                         g.fillOval(880,395,30,20);
+                         
+                         int x2=800;
+               		  for(int i=450;i<800;i=i+40)
+                   	  { // int x=780,y=350;
+                   		  g.setColor(Color.blue);
+                           //  g.drawString("process getting exceuted by the cpu",1100,300);
+                   	     x2=x2-40;
+                   	      g.setColor(Color.white);
+                   		  g.fillOval(x2,i,30,20);
+                   		  try {
+       							Thread.sleep(300);
+       						} catch (InterruptedException e) {
+       							// TODO Auto-generated catch block
+       							e.printStackTrace();
+       						}
+                   		  if(i==650)  
+                   		  break;
+                   		  else
+                   		  {
+                   		  g.setColor(Color.black);
+                   		  g.fillOval(x2,i,30,20);
+                   		  }
+                   	  }
+                   	  
+                   	  try {
+ 							Thread.sleep(300);
+ 						} catch (InterruptedException e) {
+ 							// TODO Auto-generated catch block
+ 							e.printStackTrace();
+ 						}
+                   	  
+                   	  g.setColor(Color.blue);
+               		  g.fillOval(560,650,30,20);
+               		  
+               		 g.setColor(Color.black);
+           		     g.fillOval(940,395,30,20);
+           		     
+           		     g.setColor(Color.white);
+        		     g.fillOval(840,390,30,20);
+        		     
+        		     try {
+							Thread.sleep(300);
+						} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+        		     
+        		     g.setColor(Color.black);
+        		     g.fillOval(840,390,30,20);
+              		  
+               	      int x3=800;
+               		  for(int i=450;i<800;i=i+40)
+                   	  { // int x=780,y=350;
+                   		  g.setColor(Color.blue);
+                          g.drawString("process2 in the second queue is getting exceuted by the cpu",1030,210);
+                   	     x3=x3-40;
+                   	      g.setColor(Color.white);
+                   		  g.fillOval(x3,i,30,20);
+                   		  try {
+       							Thread.sleep(300);
+       						} catch (InterruptedException e) {
+       							// TODO Auto-generated catch block
+       							e.printStackTrace();
+       						}
+                   		  if(i==650)  
+                   		  break;
+                   		  else
+                   		  {
+                   		  g.setColor(Color.black);
+                   		  g.fillOval(x3,i,30,20);
+                   		  }
+                   	  }
+               		    int nw=1200;
+               		 g.setColor(Color.blue);
+               		 g.drawString("A new process is entering the top most queue",1030,240);
+               		  for(int i=0;i<12;i++)
+               		  {   
+               			  nw=nw-40;
+               			  g.setColor(Color.white);
+               			  g.fillOval(nw,320,30,20);
+               			  if(i==8)break;
+               			  
+               			 try {
+  							Thread.sleep(300);
+  						} catch (InterruptedException e) {
+  							// TODO Auto-generated catch block
+  							e.printStackTrace();
+  						}
+               			  g.setColor(Color.black);
+             			  g.fillOval(nw,320,30,20);
+               		  }
+                   	  
+                   	  try {
+ 							Thread.sleep(300);
+ 						} catch (InterruptedException e) {
+ 							// TODO Auto-generated catch block
+ 							e.printStackTrace();
+ 						}
+                   	  
+                   	  g.setColor(Color.blue);
+               		  g.fillOval(560,650,30,20);
+                      g.drawString("process2 of queue2 got back to its queue",1030,270);	 
+                        int a=560,b=650;       
+               		  for(int i=0;i<4;i++)
+               		  {   a=a+45;
+               		      b=b-55;
+               		      g.setColor(Color.white);
+               			  g.fillOval(a, b,30,20);
+               			try {
+ 							Thread.sleep(300);
+ 						} catch (InterruptedException e) {
+ 							// TODO Auto-generated catch block
+ 							e.printStackTrace();
+ 						}
+               			g.setColor(Color.black);
+             			  g.fillOval(a, b,30,20);
+               			  
+               		  }
+               		  
+               		  g.setColor(Color.white);
+               		  g.fillOval(810, 400,30,20);
+                        
+                          try {
+  							Thread.sleep(300);
+  						} catch (InterruptedException e) {
+  							// TODO Auto-generated catch block
+  							e.printStackTrace();
+  							
+  						}
+                          g.setColor(Color.black);
+                   		  g.fillOval(840,320,30,20);
+                          int ab=810;
+                    	  for(int i=350;i<560;i=i+40)
+                    	  { // int x=780,y=350;
+                    		  g.setColor(Color.blue);
+                              g.drawString("new process1 in the top most queue getting exceuted by the cpu",1030,300);
+                    	      ab=ab-40;
+                    	      g.setColor(Color.white);
+                    		  g.fillOval(ab,i,30,20);
+                    		  try {
+        							Thread.sleep(300);
+        						} catch (InterruptedException e) {
+        							// TODO Auto-generated catch block
+        							e.printStackTrace();
+        						}
+                    		  if(i==550)  
+                    		  break;
+                    		  else
+                    		  {
+                    		  g.setColor(Color.black);
+                    		  g.fillOval(ab,i,30,20);
+                    		  }
+                    	  }
+                    	  
+                    	  try {
+  							Thread.sleep(300);
+  						} catch (InterruptedException e) {
+  							// TODO Auto-generated catch block
+  							e.printStackTrace();
+  						}
+                    	
+                    	  g.setColor(Color.blue);
+                		  g.fillOval(570,550,30,20);
+                		  
+                		  g.setColor(Color.black);
+                		  g.fillOval(810,400,30,20);
+                         
+                		      x2=800;
+                      		  for(int i=450;i<800;i=i+40)
+                          	  { // int x=780,y=350;
+                          		  g.setColor(Color.blue);
+                                  g.drawString("process2 is again getting exceuted by the cpu",1030,330);
+                          	     x2=x2-40;
+                          	      g.setColor(Color.white);
+                          		  g.fillOval(x2,i,30,20);
+                          		  try {
+              							Thread.sleep(300);
+              						} catch (InterruptedException e) {
+              							// TODO Auto-generated catch block
+              							e.printStackTrace();
+              						}
+                          		  if(i==650)  
+                          		  break;
+                          		  else
+                          		  {
+                          		  g.setColor(Color.black);
+                          		  g.fillOval(x2,i,30,20);
+                          		  }
+                          	  }
+                          	  
+                          	  try {
+        							Thread.sleep(300);
+        						} catch (InterruptedException e) {
+        							// TODO Auto-generated catch block
+        							e.printStackTrace();
+        						}
+                          	  
+                          	g.setColor(Color.blue);
+                     		  g.fillOval(560,650,30,20);
+                     		  
+                     		 g.setColor(Color.black);
+                    		  g.fillOval(880,470,30,20);
+                    		  
+                    		  g.setColor(Color.white);
+                    		  g.fillOval(840,470,30,20);
+                    		  
+                    		  g.setColor(Color.black);
+                    		  g.fillOval(840,470,30,20);
+                     		  
+                     	        x2=800;
+                        		  for(int i=470;i<670;i=i+40)
+                            	  { // int x=780,y=350;
+                            		  g.setColor(Color.blue);
+                                      g.drawString("process1 in 3rd queue is getting exceuted by the cpu",1030,360);
+                            	     x2=x2-50;
+                            	      g.setColor(Color.white);
+                            		  g.fillOval(x2,i,30,20);
+                            		  try {
+                							Thread.sleep(300);
+                						} catch (InterruptedException e) {
+                							// TODO Auto-generated catch block
+                							e.printStackTrace();
+                						}
+                            		  if(i==630)  
+                            		  break;
+                            		  else
+                            		  {
+                            		  g.setColor(Color.black);
+                            		  g.fillOval(x2,i,30,20);
+                            		  }
+                            	  }
+                            	  
+                            	  try {
+          							Thread.sleep(300);
+          						} catch (InterruptedException e) {
+          							// TODO Auto-generated catch block
+          							e.printStackTrace();
+          						}
+                            	  
+                            	  g.setColor(Color.blue);
+                        		  g.fillOval(550,630,30,20);
+                        		  
+                        		  
+                        		 g.setColor(Color.black);
+                        		 g.fillOval(940, 470,30,20);
+                        		 
+                        		 g.setColor(Color.white);
+                        		 g.fillOval(880, 470,30,20);
+                        		 
+                        		 try {
+           							Thread.sleep(300);
+           						} catch (InterruptedException e) {
+           							// TODO Auto-generated catch block
+           							e.printStackTrace();
+           						}
+                        		 g.setColor(Color.black);
+                        		 g.fillOval(880, 470,30,20);
+                        		 
+                        		 g.setColor(Color.white);
+                        		 g.fillOval(850, 470,30,20);
+                        		 
+                        		 try {
+           							Thread.sleep(300);
+           						} catch (InterruptedException e) {
+           							// TODO Auto-generated catch block
+           							e.printStackTrace();
+           						}
+                        		 
+                        		 g.setColor(Color.black);
+                        		 g.fillOval(850, 470,30,20);
+                        		 
+                        		 try {
+          							Thread.sleep(300);
+          						} catch (InterruptedException e) {
+          							// TODO Auto-generated catch block
+          							e.printStackTrace();
+          						}
+                        		 x2=800;
+                       		  for(int i=470;i<670;i=i+40)
+                           	  { // int x=780,y=350;
+                           		 g.setColor(Color.blue);
+                                     g.drawString("process2 in 3rd queue is getting exceuted by the cpu",1030,390);
+                           	     x2=x2-50;
+                           	      g.setColor(Color.white);
+                           		  g.fillOval(x2,i,30,20);
+                           		  try {
+               							Thread.sleep(300);
+               						} catch (InterruptedException e) {
+               							// TODO Auto-generated catch block
+               							e.printStackTrace();
+               						}
+                           		  if(i==630)  
+                           		  break;
+                           		  else
+                           		  {
+                           		  g.setColor(Color.black);
+                           		  g.fillOval(x2,i,30,20);
+                           		  }
+                           	  }
+                           	  
+                           	  try {
+         							Thread.sleep(300);
+         						} catch (InterruptedException e) {
+         							// TODO Auto-generated catch block
+         							e.printStackTrace();
+         						}
+                           	  
+                           	  g.setColor(Color.blue);
+                           	g.drawString("process1 in 4th queue is getting exceuted by the cpu",1030,420);
+                       		  g.fillOval(550,630,30,20);
+                       		  
+                       		 g.setColor(Color.black);
+                      		  g.fillOval(880,545,30,20);
+                      		  int c=860;
+                      		for(int i=0;i<8;i++)
+                      		{   g.setColor(Color.white);
+                      			c=c-50;
+                      			g.fillOval(c, 565,30,20);
+                      			if(i==5)break;
+                      			try {
+        							Thread.sleep(300);
+        						} catch (InterruptedException e) {
+        							// TODO Auto-generated catch block
+        							e.printStackTrace();
+        						}
+                      			g.setColor(Color.black);
+                      			g.fillOval(c, 565,30,20);
+                      		}
+                          	  
+                          	  try {
+        							Thread.sleep(300);
+        						} catch (InterruptedException e) {
+        							// TODO Auto-generated catch block
+        							e.printStackTrace();
+        						}
+                          	  
+                          	  g.setColor(Color.blue);
+                          	g.drawString("process2 in 4th queue is getting exceuted by the cpu",1030,450);
+                      		  g.fillOval(560,565,30,20);
+                      		  
+                      		g.setColor(Color.black);
+                    		  g.fillOval(940,545,30,20);
+                    		  
+                    		   c=900;
+                        		for(int i=0;i<8;i++)
+                        		{   g.setColor(Color.white);
+                        			c=c-50;
+                        			g.fillOval(c, 565,30,20);
+                        			if(i==6)break;
+                        			try {
+          							Thread.sleep(300);
+          						} catch (InterruptedException e) {
+          							// TODO Auto-generated catch block
+          							e.printStackTrace();
+          						}
+                        			g.setColor(Color.black);
+                        			g.fillOval(c, 565,30,20);
+                        		}
+                            	  
+                            	  try {
+          							Thread.sleep(300);
+          						} catch (InterruptedException e) {
+          							// TODO Auto-generated catch block
+          							e.printStackTrace();
+          						}
+                            	  
+                            	  g.setColor(Color.blue);
+                            	  g.drawString("process1 in 5th queue is getting exceuted by the cpu",1030,480);
+                        		  g.fillOval(550,565,30,20);
+                        		  
+                        		  g.setColor(Color.black);
+                        		  g.fillOval(880,620,30,20);
+                        		  
+                        		  c=860;
+                          		for(int i=0;i<8;i++)
+                          		{   g.setColor(Color.white);
+                          			c=c-50;
+                          			g.fillOval(c,615,30,20);
+                          			if(i==5)break;
+                          			try {
+            							Thread.sleep(300);
+            						} catch (InterruptedException e) {
+            							// TODO Auto-generated catch block
+            							e.printStackTrace();
+            						}
+                          			g.setColor(Color.black);
+                          			g.fillOval(c, 615,30,20);
+                          		}
+                              	  
+                              	  try {
+            							Thread.sleep(300);
+            						} catch (InterruptedException e) {
+            							// TODO Auto-generated catch block
+            							e.printStackTrace();
+            						}
+                              	  
+                              	  g.setColor(Color.blue);
+                              	g.drawString("process2 in 5th queue is getting exceuted by the cpu",1030,510);
+                          		  g.fillOval(560,615,30,20);
+                          		  
+                          		g.setColor(Color.black);
+                      		  g.fillOval(940,620,30,20);
+                      		  
+                      		  c=900;
+                        		for(int i=0;i<8;i++)
+                        		{   g.setColor(Color.white);
+                        			c=c-50;
+                        			g.fillOval(c,620,30,20);
+                        			if(i==6)break;
+                        			try {
+          							Thread.sleep(300);
+          						} catch (InterruptedException e) {
+          							// TODO Auto-generated catch block
+          							e.printStackTrace();
+          						}
+                        			g.setColor(Color.black);
+                        			g.fillOval(c, 620,30,20);
+                        		}
+                            	  
+                            	  try {
+          							Thread.sleep(300);
+          						} catch (InterruptedException e) {
+          							// TODO Auto-generated catch block
+          							e.printStackTrace();
+          						}
+                            	  
+                            	  g.setColor(Color.blue);
+                        		  g.fillOval(550,620,30,20);
+                        		  
+                      		  
+                          
+                  
+                        		 }
+                         
+                      
+                      
+                     }
+                      
+                      
+    //}
+      
+      
+  
+      
+      public boolean action(Event event, Object obj)
+    {
+          repaint();
+          return true;
+    }
+}
+
